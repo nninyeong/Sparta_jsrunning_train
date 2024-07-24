@@ -12,21 +12,21 @@
 
 ```javascript
 1. let uninitialized;
-console.log(uninitialized); // 결과값 < 빈칸 >
+console.log(uninitialized); // 결과값 < undefined > 아직 초기화되지않은 변수를 출력했기 때문입니다.
 
 
-2. < 빈칸 > apple = "사과";
-apple = "바나나"; // TypeError: Assignment to constant variable
+2. < const > apple = "사과";
+apple = "바나나"; // TypeError: Assignment to constant variable -> const에 할당하려했기때문에 발생하는 오류 같습니다. const는 선언과 동시에 초기화해야하며, 그 이후에 재할당은 허용하지 않습니다.
 
 
 3. let lotto = [3, 8, 13, 19, 21, 32];
-console.log(lotto[3]); // 결과값 < 빈칸 >
+console.log(lotto[3]); // 결과값 < 19 > 배열의 인덱스는 0부터 시작하기 때문에 lotto[3]은 lotto 배열의 4번째에 있는 19입니다.
 
 
 4. 
 let mySchedule = "";
-console.log(mySchedule || false); // < 빈칸 >
-console.log(!!mySchedule); // < 빈칸 >
+console.log(mySchedule || false); // < false >  || 연산자는 왼쪽 피연산자가 falsy한 값일 경우 오른쪽 피연산자를 반환합니다. ""는 js에서 false로 판단하는 값이므로 우측 피연산자인 false가 반환됩니다.
+console.log(!!mySchedule); // < false > mySchedule은 false -> !mySchedule은 true -> !!mySchedule은 false입니다.
 
 ```
 
@@ -85,7 +85,7 @@ function 함수명(매개변수1, 매개변수2, 매개변수3) {
 함수명(3, "+", 6); // 결과값 9
 함수명(11, "-", 6); // 결과값 5
 함수명(6, "*", 3); // 결과값 18
-함수명(15, "+", 3); // 결과값 5
+함수명(15, "/", 3); // 결과값 5
 ```
 
 &nbsp;
